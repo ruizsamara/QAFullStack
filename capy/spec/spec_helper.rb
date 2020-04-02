@@ -1,5 +1,6 @@
 require "capybara"
 require "capybara/rspec"
+require "selenium-webdriver"
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
@@ -15,6 +16,12 @@ RSpec.configure do |config|
   config.include Capybara::DSL
 end
 
+#Configuração para o Chrome
+#Capybara.configure do |config|
+#  config.default_driver = :selenium_chrome
+#end
+
+#Configuração para o Firefox
 Capybara.configure do |config|
-  config.default_driver = :selenium_chrome
+  config.default_driver = :selenium
 end
